@@ -1,3 +1,4 @@
+import { Trainee } from './../../models/Trainee';
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { Forms } from "src/app/models/Forms";
@@ -14,11 +15,18 @@ export class AppliedformsComponent implements OnInit {
   popup2 = false;
   name = "angular";
   form: Forms[];
+  trainee: Trainee[];
 
   constructor(private apiService: ApiService, private router: Router) {
     this.apiService.getForms().subscribe((data: Forms[]) => {
       this.form = data;
       console.log(data);
+    });
+  }
+
+  addForms(trainee : Trainee) {
+    this.apiService.postForms(trainee).subscribe((res) => {
+      console.log(res);
     });
   }
 

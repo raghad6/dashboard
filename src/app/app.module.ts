@@ -13,7 +13,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatIconModule} from '@angular/material/icon'
 import { HttpClientModule } from '@angular/common/http';
-import { LoginComponent } from './pages//login/login.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -24,7 +24,7 @@ import { LoginComponent } from './pages//login/login.component';
     TrainerslistComponent,
     TraineeslistComponent,
     CertificateComponent,
-    LoginComponent,
+    // LoginComponent
     
   ],
   imports: [

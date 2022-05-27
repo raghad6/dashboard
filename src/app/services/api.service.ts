@@ -31,6 +31,11 @@ export class ApiService {
   getEmployeeData(): Observable<Employee[]> {
     return this.httpClient.get<Employee[]>(this.API + 'employee')   ;
   }
+
+  getAllUsers(): Observable<User[]> {
+    return this.httpClient.get<User[]>(this.API + 'user');
+  }
+
   postLoginData(user: User): Observable<any> {
     const headers = new HttpHeaders();
     // headers.append('Content-Type', 'aaplicedForms');
@@ -41,6 +46,20 @@ export class ApiService {
       ,
       {
         headers
+      }
+    );
+  }
+
+  postForms(trainee: Trainee): Observable<any> {
+    const headers = new HttpHeaders();
+    // headers.append('Content-Type', 'aaplicedForms');
+    return this.httpClient.post(
+      environment.api + 'trainee',
+      {
+         trainee,
+      },
+      {
+        headers: headers,
       }
     );
   }

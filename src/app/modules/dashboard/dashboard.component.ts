@@ -1,9 +1,10 @@
+import { ApiService } from './../../services/api.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { DashboardService } from '../dashboard.service';
 import { MatTableDataSource, MatPaginator } from '@angular/material';
 import { Router } from '@angular/router';
-
-
+import { User } from 'src/app/models/user';
+// import { ApiService } from "...";
 export interface PeriodicElement {
   name: string;
   position: number;
@@ -43,13 +44,21 @@ export class DashboardComponent implements OnInit {
   bigChart = [];
   cards = [];
   pieChart = [];
-
+  user:User[]=[];
+  
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
-  constructor(private router:Router, private dashboardService: DashboardService, ) { }
+  constructor(private router:Router, 
+    private dashboardService: DashboardService,
+     private apiService:ApiService) { 
+      this.apiService.getAllUsers().subscribe((data: User[]) => {
+        this.user = data;
+        console.log(data);
+      });
+     }
 
   ngOnInit() {
     this.bigChart = this.dashboardService.bigChart();
@@ -58,7 +67,9 @@ export class DashboardComponent implements OnInit {
 
     this.dataSource.paginator = this.paginator;
   }
+
   goToPage(pageName:string){
     this.router.navigate([`${pageName}`]);
   }
+
 }

@@ -8,8 +8,7 @@ import { CertificateComponent } from './pages/certificate/certificate.component'
 import { EmployeeslistComponent } from './pages/employeeslist/employeeslist.component';
 import { TraineeslistComponent } from './pages/traineeslist/traineeslist.component';
 import { TrainerslistComponent } from './pages/trainerslist/trainerslist.component';
-import { LoginComponent } from './pages/login/login.component';
-
+import { LoginComponent } from './login/login.component';
 
 
 const routes: Routes = [{
@@ -26,7 +25,6 @@ const routes: Routes = [{
   {
     path: 'appliedforms',
     component: AppliedformsComponent
-    
   },
   {
     path: 'traineeslist',
@@ -44,10 +42,10 @@ const routes: Routes = [{
     path: 'certificate',
     component: CertificateComponent
   },
-  {
-    path: '',
-    component: LoginComponent
-  },
+  // {
+  //   path: 'login',
+  //   component: LoginComponent
+  // }
 
 ]
 }];
