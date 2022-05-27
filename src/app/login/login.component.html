@@ -1,0 +1,37 @@
+<form [formGroup]="loginForm">
+    <div class="imgcontainer">
+
+    </div>
+
+    <div class="container">
+
+        <label for="email"><b>Email</b></label>
+        <div class="col container">
+            <input class="form-control" [(ngModel)]="email" (ngModelChange)="log()" type="email" placeholder="Enter your Email" name="email" required formControlName="email" [ngClass]="{ 'is-invalid': valida['email'].errors }">
+            <div style=" margin-top: 0%; padding-top: 0%; " *ngIf=" loginForm.controls[ 'email'].errors ">
+                <div class="req " *ngIf="valida[ 'email'].errors?.[ 'required'] " class="alert-danger">Please enter your Email</div>
+            </div>
+        </div>
+
+
+        <label for="Password"><b>Password</b></label>
+        <div class="col container">
+            <input class="form-control" [(ngModel)]="Password" (ngModelChange)="log()" type="password" placeholder="Enter your Password" name="Password" required formControlName="Password" [ngClass]="{ 'is-invalid': valida['Password'].errors }">
+            <div style=" margin-top: 0%; padding-top: 0%; " *ngIf=" loginForm.controls[ 'Password'].errors ">
+                <div class="req " *ngIf="valida[ 'Password'].errors?.[ 'required'] " class=" alert-danger">Please enter your Password</div>
+            </div>
+            <div *ngIf="alertEmail" class="alert alert-danger " style="border: 0px;"> "Invalid" Email must be valid </div>
+            <div *ngIf="alertPass" class="alert alert-danger " style="border: 0px;"> "Invalid password" Password must contain numbers and letters </div>
+            <div *ngIf="alertUser" class="alert alert-danger " style="border: 0px;"> "Invalid login" </div>
+
+
+        </div>
+
+        <button (click)="appLogin()" type="submit " [disabled]="!loginForm.valid" value="Submit">Login</button>
+    </div>
+
+</form>
+<h6> Don't have an account? <a href="/SignUp">SignUp</a></h6>
+
+
+

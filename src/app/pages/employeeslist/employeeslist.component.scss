@@ -1,0 +1,41 @@
+.icon {
+    background-repeat: no-repeat;
+    fill: currentColor;
+    height: 29px;
+    /* width: 33px; */
+    float: right;
+}
+
+.popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 40%;
+    position: relative;
+    transition: all 5s ease-in-out;
+  }
+  .popup .close {
+    position: absolute;
+    top: 6px;
+    right: 19px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+  }
+  .popup .close:hover {
+    color: red;
+    cursor: pointer;
+  }
+  .popup .content {
+    max-height: 30%;
+    overflow: auto;
+  }
+  .popup{
+      width: 70%;
+  }
+  .btn{
+    margin: 3%;;
+}

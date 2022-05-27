@@ -1,0 +1,51 @@
+<h3>Employees List </h3>
+<mat-accordion>
+    <mat-expansion-panel *ngFor="let employee of employees">
+        <button type="button" class="icon"(click)="popup=true"><mat-icon>person_add</mat-icon></button>
+
+      <mat-expansion-panel-header > 
+        <mat-panel-title>
+         {{employee.FName}} {{employee.LName}}
+
+        </mat-panel-title>
+        <mat-panel-description>
+         {{employee.Email}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p><b>Department : </b>{{employee.Department}}</p>
+      <p><b>Phone Number: </b>{{employee.PhoneNo}}</p>
+
+
+
+      <div class="overlay" *ngIf="popup">
+        <div class="popup">
+            <h4>Add Trainer</h4>
+            <a class="close" (click)="popup = false">&times;</a>
+            <div class="content">
+                Are you sure you want to set this employee as a trainer? 
+                To confirm please type <b>"yes" </b> in the field below and hit confirm. <br>
+                <input type="text" class="form-control" id="inputtext" > <br>
+                <div class="container">
+                    <div class="row">
+                        <button (click)="goToPage('Trainerslist')"  type="submit"  class="btn ">Confirm </button> &nbsp;&nbsp;
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+     
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <br>
+  <mat-paginator [length]="100"
+              [pageSize]="10"
+              [pageSizeOptions]="[5, 10, 25, 100]"
+              aria-label="Select page">
+</mat-paginator>
+
+  
+<br>
+<br>
+<br>

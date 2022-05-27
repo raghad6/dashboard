@@ -1,0 +1,69 @@
+<h3>Trainees List</h3>
+<mat-accordion>
+    <mat-expansion-panel *ngFor="let trainee of trainees">
+      <button type="button" class="icon"><mat-icon (click)="popup=true" >person_remove_alt_1</mat-icon></button>
+      <button type="button" class="icon" ><mat-icon (click)="popup1=true">assignment_ind</mat-icon></button>
+      <mat-expansion-panel-header > 
+        <mat-panel-title>
+         {{trainee.UserName}}
+        </mat-panel-title>
+        <mat-panel-description>
+         {{trainee.Email}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p><b>Major : </b>{{trainee.Major}}</p> 
+      <p><b>Total Houers : </b>{{trainee.TrainingHours}}</p>
+
+
+      <div class="overlay" *ngIf="popup">
+        <div class="popup">
+            <h4>Deactivate Account</h4>
+            <a class="close" (click)="popup = false">&times;</a>
+            <div class="content">
+                Are you sure you want to deactivate this account? 
+                To confirm please type <b>"deactivate" </b> in the field below and hit confirm. <br>
+                <input type="text" class="form-control" id="inputtext" > <br>
+                <div class="container">
+                    <div class="row">
+                        <button type="submit" class="btn">Confirm </button> &nbsp;&nbsp;
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+
+
+      <div class="overlay" *ngIf="popup1">
+        <div class="popup1">
+            <h4>Assign to trainer</h4>
+            <a class="close" (click)="popup1 = false">&times;</a>
+            <div class="content">
+               
+                <input type="text" class="form-control" id="inputtext" > <br>
+                <div class="container">
+                    <div class="row">
+                        <button type="submit" class="btn">Confirm </button> &nbsp;&nbsp;
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+
+
+      
+
+
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <br>
+  <mat-paginator [length]="100"
+              [pageSize]="10"
+              [pageSizeOptions]="[5, 10, 25, 100]"
+              aria-label="Select page">
+</mat-paginator>
+
+  
+<br>
+<br>
+<br>
