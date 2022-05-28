@@ -70,19 +70,15 @@
       <table class=" table table-striped">
         <thead>
           <tr>
-            <th>Actor Name</th>
-            <th>Character Name</th>
-            <th>Gender</th>
-            <th>Status</th>
+            <th> ID </th>
+            <th>Email</th>
           </tr>
         </thead>
 
         <tbody>
           <tr *ngFor="let userr of user">
             <td>{{ userr.ID }}</td>
-            <td>{{ userr.Name }}</td>
             <td>{{ userr.Email }}</td>
-            <td>{{ userr.Role }}</td>
           </tr>
         </tbody>
       </table>

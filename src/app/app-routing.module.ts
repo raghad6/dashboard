@@ -41,14 +41,15 @@ const routes: Routes = [{
   {
     path: 'certificate',
     component: CertificateComponent
-  },
-  // {
-  //   path: 'login',
-  //   component: LoginComponent
-  // }
+  }
 
 ]
-}];
+},
+// {
+//     path: 'login',
+//     component: LoginComponent
+//   }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

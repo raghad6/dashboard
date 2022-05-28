@@ -32,6 +32,19 @@ export class ApiService {
     return this.httpClient.get<Employee[]>(this.API + 'employee')   ;
   }
 
+  postdata(ufr: Forms): Observable<any> {
+    const headers = new HttpHeaders();
+    // headers.append('Content-Type', 'aaplicedForms');
+    return this.httpClient.post(
+      environment.api + 'postdatauserandtranee',
+      
+      ufr
+      ,
+      {
+        headers
+      }
+    );
+  }
   getAllUsers(): Observable<User[]> {
     return this.httpClient.get<User[]>(this.API + 'user');
   }

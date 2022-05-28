@@ -24,7 +24,7 @@ import { LoginComponent } from './login/login.component';
     TrainerslistComponent,
     TraineeslistComponent,
     CertificateComponent,
-    // LoginComponent
+    LoginComponent
     
   ],
   imports: [

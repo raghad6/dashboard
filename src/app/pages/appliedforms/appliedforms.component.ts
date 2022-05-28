@@ -23,7 +23,12 @@ export class AppliedformsComponent implements OnInit {
       console.log(data);
     });
   }
-
+  sendastraneeanduser(fr:Forms){
+    // fr.RoleID=1;
+    this.apiService.postdata(fr).subscribe((data: any) => {
+      console.log(data);
+    });
+  }
   addForms(trainee : Trainee) {
     this.apiService.postForms(trainee).subscribe((res) => {
       console.log(res);
@@ -35,5 +40,11 @@ export class AppliedformsComponent implements OnInit {
   }
   goToPage(pageName:string){
     this.router.navigate([`${pageName}`]);
+  }
+
+  submit() {
+    // this.addForms( 
+    //    new Trainee(this.trainee.ID., ProfilePic: string, UserName: string, Email: string, Password: string, DOB: Date, TrainingHours: string, Major: string): Trainee
+    // );
   }
 }

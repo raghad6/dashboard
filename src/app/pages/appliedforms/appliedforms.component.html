@@ -5,7 +5,7 @@
       <button type="button" class="icon" (click)="popup2=true"><mat-icon>check</mat-icon></button>
       <mat-expansion-panel-header > 
         <mat-panel-title>
-         {{foorm.FName}}  {{foorm.LName}}
+         {{foorm.ID}} &nbsp; &nbsp;   {{foorm.FName}}  {{foorm.LName}}
         </mat-panel-title>
         <mat-panel-description>
          {{foorm.Email}}
@@ -24,7 +24,7 @@
       <p><b>Required Training Hours : </b>{{foorm.ReqTrainingHours}}</p>
       <p><b>University Supervisor Phone Number : </b>{{foorm.SupervisorPhoneNo}}</p>
       <p><b>University Training Document : </b>{{foorm.UniversityDoc}}</p>
-      <p><b>CVC : </b>{{foorm.CVC}}</p>
+      <p><b>Supervisor Email : </b>{{foorm.Emailsup}}</p>
 
       <div class="overlay" *ngIf="popup">
         <div class="popup">
@@ -53,7 +53,7 @@
                 <input type="text" class="form-control" id="inputtext" > <br>
                 <div class="container">
                     <div class="row">
-                        <button (click)="goToPage('traineeslist')" type="submit" class="btn"> Confirm </button> &nbsp;&nbsp;
+                        <button (click)="sendastraneeanduser(foorm)" type="submit" class="btn"> Confirm </button> &nbsp;&nbsp;
                     </div>
 
                 </div>

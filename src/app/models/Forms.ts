@@ -18,7 +18,7 @@ export class Forms {
   public ReqTrainingHours: number;
   public SupervisorPhoneNo: number;
   public UniversityDoc: string;
-  public CVC: string;
+  public Emailsup: string;
 
   constructor(
     ID: number,
@@ -38,7 +38,7 @@ export class Forms {
     ReqTrainingHours: number,
     SupervisorPhoneNo: number,
     UniversityDoc: string,
-    CVC: string
+    Emailsup: string
   ) {
     this.ID = ID;
     this.FName = FName;
@@ -57,6 +57,6 @@ export class Forms {
     this.ReqTrainingHours = ReqTrainingHours;
     this.SupervisorPhoneNo = SupervisorPhoneNo;
     this.UniversityDoc = UniversityDoc;
-    this.CVC = CVC;
+    this.Emailsup = Emailsup;
   }
 }
