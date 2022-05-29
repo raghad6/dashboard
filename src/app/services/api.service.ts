@@ -7,6 +7,7 @@ import { environment } from 'src/environments/environment';
 import { Forms } from '../models/Forms';
 import { Trainer } from '../models/Trainer';
 import { User } from '../models/user';
+import { Supervisor } from '../models/Supervisor';
 @Injectable({
   providedIn: 'root',
 })
@@ -32,12 +33,16 @@ export class ApiService {
     return this.httpClient.get<Employee[]>(this.API + 'employee')   ;
   }
 
+  getSupervisorData(): Observable<Supervisor[]> {
+    return this.httpClient.get<Supervisor[]>(this.API + 'unitrainingsupervisor')   ;
+  }
+
   postdata(ufr: Forms): Observable<any> {
     const headers = new HttpHeaders();
     // headers.append('Content-Type', 'aaplicedForms');
     return this.httpClient.post(
       environment.api + 'postdatauserandtranee',
-      
+
       ufr
       ,
       {
@@ -54,7 +59,6 @@ export class ApiService {
     // headers.append('Content-Type', 'aaplicedForms');
     return this.httpClient.post(
       environment.api + 'login',
-      
          user
       ,
       {
@@ -62,7 +66,6 @@ export class ApiService {
       }
     );
   }
-
   postForms(trainee: Trainee): Observable<any> {
     const headers = new HttpHeaders();
     // headers.append('Content-Type', 'aaplicedForms');

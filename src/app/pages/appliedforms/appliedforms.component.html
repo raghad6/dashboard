@@ -1,37 +1,69 @@
 <h3>Applied Forms</h3>
 <mat-accordion>
     <mat-expansion-panel *ngFor="let foorm of form">
-      <button type="button" class="icon" (click)="popup=true"><mat-icon>close</mat-icon></button>
-      <button type="button" class="icon" (click)="popup2=true"><mat-icon>check</mat-icon></button>
-      <mat-expansion-panel-header > 
-        <mat-panel-title>
-         {{foorm.ID}} &nbsp; &nbsp;   {{foorm.FName}}  {{foorm.LName}}
-        </mat-panel-title>
-        <mat-panel-description>
-         {{foorm.Email}}
-        </mat-panel-description>
-      </mat-expansion-panel-header>
-      <p><b>Phone Number : </b>{{foorm.PhoneNo}}</p>
-      <p><b>ID Number : </b>{{foorm.StudentID}}</p>
-      <p><b>Address : </b>{{foorm.Addres}}</p>
-      <p><b>University Name : </b>{{foorm.university}}</p>
-      <p><b>Major : </b>{{foorm.Field}}</p>
-      <p><b>Expected Day Of Graduation : </b>{{foorm.ExpectedDOGrad}}</p>
-      <p><b>Total Average : </b>{{foorm.TotalAvg}}</p>
-      <p><b>The Training is : </b>{{foorm.TypeOfTraining}}</p>
-      <p><b>Days Available : </b>{{foorm.DaysAvailable}}</p>
-      <p><b>Hours Available : </b>{{foorm.HoursAvailable}}</p>
-      <p><b>Required Training Hours : </b>{{foorm.ReqTrainingHours}}</p>
-      <p><b>University Supervisor Phone Number : </b>{{foorm.SupervisorPhoneNo}}</p>
-      <p><b>University Training Document : </b>{{foorm.UniversityDoc}}</p>
-      <p><b>Supervisor Email : </b>{{foorm.Emailsup}}</p>
+        <button type="button" class="icon" (click)="popup=true"><mat-icon>close</mat-icon></button>
+        <button type="button" class="icon" (click)="popup2=true"><mat-icon>check</mat-icon></button>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                {{foorm.ID}} &nbsp; &nbsp; {{foorm.FName}} {{foorm.LName}}
+            </mat-panel-title>
+            <mat-panel-description>
+                {{foorm.Email}}
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div class="overlay" *ngIf="popup">
+            <div class="popup">
+                <h4>Reject Form</h4>
+                <a class="close" (click)="popup = false">&times;</a>
+                <div class="content">
+                    Are you sure you want to reject this account? To confirm please type <b>"reject" </b> in the field below and hit confirm. <br>
+                    <input type="text" class="form-control" id="inputtext"> <br>
+                    <div class="container">
+                        <div class="row">
+                            <button type="submit" value="Submit" class="btn" (click)="addForms()"> Confirm </button> &nbsp;&nbsp;
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-      <div class="overlay" *ngIf="popup">
+        <div class="overlay" *ngIf="popup2">
+            <div class="popup2">
+                <h4>Accept Form</h4>
+                <a class="close" (click)="popup2 = false">&times;</a>
+                <div class="content">
+                    Are you sure you want to create an account for this applicant? To confirm please type <b>"create" </b> in the field below and hit confirm. <br>
+                    <input type="text" class="form-control" id="inputtext"> <br>
+                    <div class="container">
+                        <div class="row">
+                            <button (click)="sendastraneeanduser(foorm)" type="submit" class="btn"> Confirm </button> &nbsp;&nbsp;
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p><b>Phone Number : </b>{{foorm.PhoneNo}}</p>
+        <p><b>ID Number : </b>{{foorm.StudentID}}</p>
+        <p><b>Address : </b>{{foorm.Addres}}</p>
+        <p><b>University Name : </b>{{foorm.university}}</p>
+        <p><b>Major : </b>{{foorm.Field}}</p>
+        <p><b>Expected Day Of Graduation : </b>{{foorm.ExpectedDOGrad}}</p>
+        <p><b>Total Average : </b>{{foorm.TotalAvg}}</p>
+        <p><b>The Training is : </b>{{foorm.TypeOfTraining}}</p>
+        <p><b>Days Available : </b>{{foorm.DaysAvailable}}</p>
+        <p><b>Hours Available : </b>{{foorm.HoursAvailable}}</p>
+        <p><b>Required Training Hours : </b>{{foorm.ReqTrainingHours}}</p>
+        <p><b>University Supervisor Phone Number : </b>{{foorm.SupervisorPhoneNo}}</p>
+        <p><b>University Training Document : </b>{{foorm.UniversityDoc}}</p>
+        <p><b>Supervisor Email : </b>{{foorm.Emailsup}}</p>
+
+        <!-- <div class="overlay" *ngIf="popup">
         <div class="popup">
             <h4>Reject Form</h4>
             <a class="close" (click)="popup = false">&times;</a>
             <div class="content">
-                Are you sure you want to reject this account? 
+                Are you sure you want to reject this account?
                 To confirm please type <b>"reject" </b> in the field below and hit confirm. <br>
                 <input type="text" class="form-control" id="inputtext" > <br>
                 <div class="container">
@@ -48,7 +80,7 @@
             <h4>Accept Form</h4>
             <a class="close" (click)="popup2 = false">&times;</a>
             <div class="content">
-                Are you sure you want to create an account for this applicant? 
+                Are you sure you want to create an account for this applicant?
                 To confirm please type <b>"create" </b> in the field below and hit confirm. <br>
                 <input type="text" class="form-control" id="inputtext" > <br>
                 <div class="container">
@@ -59,8 +91,8 @@
                 </div>
             </div>
         </div>
-      </div>
-      
+      </div> -->
+
 
 
 
@@ -76,16 +108,13 @@
 
 
     </mat-expansion-panel>
-  </mat-accordion>
+</mat-accordion>
 
-  <br>
-  <mat-paginator [length]="100"
-              [pageSize]="10"
-              [pageSizeOptions]="[5, 10, 25, 100]"
-              aria-label="Select page">
+<br>
+<mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page">
 </mat-paginator>
 
-  
+
 <br>
 <br>
 <br>

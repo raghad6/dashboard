@@ -11,8 +11,10 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class TrainerslistComponent implements OnInit {
 
-  trainers:Trainer[]=[];
-  ProfilePic:any;
+  trainers: Trainer[]=[];
+  ProfilePic: any;
+  popup = false;
+
 
   constructor(private apiService: ApiService, private router: Router, private sanitizer: DomSanitizer) { 
 

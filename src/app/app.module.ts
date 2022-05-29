@@ -11,9 +11,11 @@ import { TraineeslistComponent } from './pages/traineeslist/traineeslist.compone
 import { CertificateComponent } from './pages/certificate/certificate.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatPaginatorModule} from '@angular/material/paginator';
-import {MatIconModule} from '@angular/material/icon'
+import {MatIconModule} from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './pages/login/login.component';
+import { SupervisorlistComponent } from './pages/supervisorlist/supervisorlist.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -24,8 +26,9 @@ import { LoginComponent } from './login/login.component';
     TrainerslistComponent,
     TraineeslistComponent,
     CertificateComponent,
-    LoginComponent
-    
+    LoginComponent,
+    SupervisorlistComponent
+
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,8 @@ import { LoginComponent } from './login/login.component';
     MatExpansionModule,
     MatPaginatorModule,
     MatIconModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

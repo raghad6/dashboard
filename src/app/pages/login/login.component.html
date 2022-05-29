@@ -1,0 +1,55 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+
+<div style="background-color: #666666;">
+
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100">
+                <form class="login100-form validate-form">
+                    <span class="login100-form-title p-b-43" style="padding: 5%; color: white;">
+						Admin Panel Login
+					</span>
+
+
+                    <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                        <input class="input100 form-control" [(ngModel)]="email" type="text" name="email" placeholder="Email">
+                        <span class="focus-input100"></span>
+                    </div>
+
+
+                    <div class="wrap-input100 validate-input" data-validate="Password is required">
+                        <input [(ngModel)]="Password" class="input100 form-control" type="password" name="pass" placeholder="Password">
+                        <span class="focus-input100"></span>
+                    </div>
+
+
+
+                    <div class="container-login100-form-btn">
+                        <button (click)="appLogin()" type="submit" class="login100-form-btn">
+							Login
+						</button>
+                    </div>
+
+                    <!-- <div class="text-center p-t-46 p-b-20">
+                        <span class="txt2">
+              Don't have an account?
+            </span>
+                        <a routerLink="/signup">
+                            <i>
+                  Sign up
+                </i>
+                        </a>
+                    </div> -->
+
+                </form>
+
+                <div class="login100-more" style="background-image: url('assets/backg.png');">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>

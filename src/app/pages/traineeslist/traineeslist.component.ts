@@ -13,10 +13,10 @@ export class TraineeslistComponent implements OnInit {
 
   popup = false;
   popup1 = false;
-  name= 'angular';
-  trainees:Trainee[]=[];
+  name = 'angular';
+  trainees: Trainee[] = [];
 
-  constructor(private router: Router, private apiService: ApiService) { 
+  constructor(private router: Router, private apiService: ApiService) {
     this.apiService.getTraineeData().subscribe((data: Trainee[]) => {
       this.trainees = data;
       console.log(data);
@@ -25,7 +25,7 @@ export class TraineeslistComponent implements OnInit {
 
   ngOnInit() {
   }
-  goToPage(pageName:string){
+  goToPage(pageName: string) {
     this.router.navigate([`${pageName}`]);
 }
 }

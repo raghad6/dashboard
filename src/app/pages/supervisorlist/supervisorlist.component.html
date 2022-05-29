@@ -1,22 +1,19 @@
-<h3>Trainers List</h3>
+<h3>Training Supervisor List</h3>
 <mat-accordion>
-    <mat-expansion-panel *ngFor="let trainer of trainers">
+    <mat-expansion-panel *ngFor="let Supervisors of seupervisor">
         <button type="button" class="icon"><mat-icon (click)="popup=true" >person_remove_alt_1</mat-icon></button>
-
+        <!-- <button type="button" class="icon"><mat-icon (click)="popup1=true">assignment_ind</mat-icon></button> -->
         <mat-expansion-panel-header>
             <mat-panel-title>
-
-                <img src=[trainer.ProfilePic]><br>
-                <!-- <img src="data:image/jpeg;base64,{{ProfilePic}}"/> &nbsp; -->
-                <!-- {{trainer.UserName}} -->
-                <!-- {{trainer.ID}} &nbsp; &nbsp; {{trainer.FName}} {{trainer.LName}} -->
-                {{trainer.ID}} &nbsp; &nbsp; {{trainer.FName}} {{trainer.LName}}
-
+                {{Supervisors.SupervisorName}}
             </mat-panel-title>
             <mat-panel-description>
-                {{trainer.Email}}
+                {{Supervisors.Email}}
             </mat-panel-description>
         </mat-expansion-panel-header>
+        <p><b>University Name : </b>{{Supervisors.UniName}}</p>
+        <p><b>Phone number : </b>{{Supervisors.PhoneNo}}</p>
+
 
         <div class="overlay" *ngIf="popup">
             <div class="popup">
@@ -34,9 +31,27 @@
             </div>
         </div>
 
-        <p><b>Phone Number : </b>{{trainer.PhoneNo}}</p>
-        <p><b>Department : </b>{{trainer.Department}}</p>
-        <p>data:image/png;base64,{{ProfilePic}}</p>
+
+        <!-- <div class="overlay" *ngIf="popup1">
+            <div class="popup1">
+                <h4>Assign to trainer</h4>
+                <a class="close" (click)="popup1 = false">&times;</a>
+                <div class="content">
+
+                    <input type="text" class="form-control" id="inputtext"> <br>
+                    <div class="container">
+                        <div class="row">
+                            <button type="submit" class="btn">Confirm </button> &nbsp;&nbsp;
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+
+
+
+
     </mat-expansion-panel>
 </mat-accordion>
 

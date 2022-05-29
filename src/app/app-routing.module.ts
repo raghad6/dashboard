@@ -8,7 +8,8 @@ import { CertificateComponent } from './pages/certificate/certificate.component'
 import { EmployeeslistComponent } from './pages/employeeslist/employeeslist.component';
 import { TraineeslistComponent } from './pages/traineeslist/traineeslist.component';
 import { TrainerslistComponent } from './pages/trainerslist/trainerslist.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './pages/login/login.component';
+import { SupervisorlistComponent } from './pages/supervisorlist/supervisorlist.component';
 
 
 const routes: Routes = [{
@@ -39,16 +40,20 @@ const routes: Routes = [{
     component: EmployeeslistComponent
   },
   {
+    path: 'supervisorlist',
+    component: SupervisorlistComponent
+  },
+  {
     path: 'certificate',
     component: CertificateComponent
   }
 
 ]
 },
-// {
-//     path: 'login',
-//     component: LoginComponent
-//   }
+{
+    path: 'login',
+    component: LoginComponent
+  }
 ];
 
 @NgModule({
