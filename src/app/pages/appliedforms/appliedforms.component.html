@@ -2,7 +2,7 @@
 <mat-accordion>
     <mat-expansion-panel *ngFor="let foorm of form">
         <button type="button" class="icon" (click)="popup=true"><mat-icon>close</mat-icon></button>
-        <button type="button" class="icon" (click)="popup2=true"><mat-icon>check</mat-icon></button>
+        <button type="button" class="icon1" (click)="popup2=true"><mat-icon>check</mat-icon></button>
         <mat-expansion-panel-header>
             <mat-panel-title>
                 {{foorm.ID}} &nbsp; &nbsp; {{foorm.FName}} {{foorm.LName}}
@@ -32,7 +32,7 @@
                 <h4>Accept Form</h4>
                 <a class="close" (click)="popup2 = false">&times;</a>
                 <div class="content">
-                    Are you sure you want to create an account for this applicant? To confirm please type <b>"create" </b> in the field below and hit confirm. <br>
+                    Are you sure you want to accept this applicant? To confirm please type <b>"create" </b> in the field below and hit confirm. <br>
                     <input type="text" class="form-control" id="inputtext"> <br>
                     <div class="container">
                         <div class="row">

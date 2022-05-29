@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./traineeslist.component.scss']
 })
 export class TraineeslistComponent implements OnInit {
-
+  status: any;
   popup = false;
   popup1 = false;
   name = 'angular';
@@ -23,7 +23,15 @@ export class TraineeslistComponent implements OnInit {
     });
   }
 
-  ngOnInit() {
+  async ngOnInit() {
+    localStorage.setItem('status', this.status);
+    this.status = await localStorage.getItem('status');
+    if(this.status!=0){
+      console.log(' in on initthis.status: ', this.status);
+
+   this.goToPage('');
+    }
+
   }
   goToPage(pageName: string) {
     this.router.navigate([`${pageName}`]);

@@ -66,6 +66,7 @@ export class ApiService {
       }
     );
   }
+
   postForms(trainee: Trainee): Observable<any> {
     const headers = new HttpHeaders();
     // headers.append('Content-Type', 'aaplicedForms');
@@ -79,4 +80,20 @@ export class ApiService {
       }
     );
   }
+
+  postTrainer(ufr: Employee): Observable<any> {
+    const headers = new HttpHeaders();
+    // headers.append('Content-Type', 'aaplicedForms');
+    return this.httpClient.post(
+      environment.api + 'trainer', //??? which table 
+
+      ufr
+      ,
+      {
+        headers
+      }
+    );
+  }
 }
+
+

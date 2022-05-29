@@ -2,6 +2,7 @@ import { Employee } from './../../models/Employee';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
+import { Trainer } from 'src/app/models/Trainer';
 
 @Component({
   selector: 'app-employeeslist',
@@ -13,6 +14,8 @@ export class EmployeeslistComponent implements OnInit {
 popup=false
 name='angular';
 employees:Employee[]=[];
+trainer: Trainer[];
+
 
 
   constructor(private router: Router, private apiService: ApiService) { 
@@ -21,6 +24,12 @@ employees:Employee[]=[];
       console.log(data);
     });
   }
+
+  // addTrainer(trainer: Trainer) {
+  //   this.apiService.postForms(trainer).subscribe((res) => {
+  //     console.log(res);
+  //   });
+  // }
 
   ngOnInit() {
   }
