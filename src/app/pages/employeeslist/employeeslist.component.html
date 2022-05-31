@@ -1,19 +1,19 @@
 <h3>Employees List </h3>
 <mat-accordion>
-    <mat-expansion-panel *ngFor="let employee of employees">
+    <mat-expansion-panel *ngFor="let employeee of employee">
         <button type="button" class="icon"(click)="popup=true"><mat-icon>person_add</mat-icon></button>
 
       <mat-expansion-panel-header > 
         <mat-panel-title>
-         {{employee.FName}} {{employee.LName}}
+         {{employeee.FName}} {{employeee.LName}}
 
         </mat-panel-title>
         <mat-panel-description>
-         {{employee.Email}}
+         {{employeee.Email}}
         </mat-panel-description>
       </mat-expansion-panel-header>
-      <p><b>Department : </b>{{employee.Department}}</p>
-      <p><b>Phone Number: </b>{{employee.PhoneNo}}</p>
+      <p><b>Department : </b>{{employeee.Department}}</p>
+      <p><b>Phone Number: </b>{{employeee.PhoneNo}}</p>
 
 
 
@@ -27,7 +27,7 @@
                 <input type="text" class="form-control" id="inputtext" > <br>
                 <div class="container">
                     <div class="row">
-                        <!-- <button (click)="addTrainer()"  type="submit"  class="btn ">Confirm </button> &nbsp;&nbsp; -->
+                        <button (click)="sendastraneeanduser(employeee)"  type="submit"  class="btn ">Confirm </button> &nbsp;&nbsp;
                         
                     </div>
                 </div>

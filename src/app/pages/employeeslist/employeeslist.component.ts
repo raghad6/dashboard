@@ -13,23 +13,32 @@ export class EmployeeslistComponent implements OnInit {
 
 popup=false
 name='angular';
-employees:Employee[]=[];
+employee:Employee[]=[];
 trainer: Trainer[];
 
 
 
   constructor(private router: Router, private apiService: ApiService) { 
     this.apiService.getEmployeeData().subscribe((data: Employee[]) => {
-      this.employees = data;
+      this.employee = data;
+      console.log(data);
+    });
+
+    
+  }
+
+  sendastraneeanduser(em: Employee){
+    // fr.RoleID=1;
+    this.apiService.postEmployee(em).subscribe((data: any) => {
       console.log(data);
     });
   }
-
-  // addTrainer(trainer: Trainer) {
-  //   this.apiService.postForms(trainer).subscribe((res) => {
-  //     console.log(res);
-  //   });
-  // }
+  
+  addTrainer(employee: Employee) {
+    this.apiService.postTrainer(employee).subscribe((res) => {
+      console.log(res);
+    });
+  }
 
   ngOnInit() {
   }

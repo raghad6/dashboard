@@ -8,6 +8,8 @@ import { Forms } from '../models/Forms';
 import { Trainer } from '../models/Trainer';
 import { User } from '../models/user';
 import { Supervisor } from '../models/Supervisor';
+import { Company } from '../models/Company';
+import { User2 } from '../models/user2';
 @Injectable({
   providedIn: 'root',
 })
@@ -50,16 +52,35 @@ export class ApiService {
       }
     );
   }
+
+  postEmployee(empl: Employee): Observable<any> {
+    const headers = new HttpHeaders();
+    // headers.append('Content-Type', 'aaplicedForms');
+    return this.httpClient.post(
+      environment.api + 'trainer',
+
+      empl
+      ,
+      {
+        headers
+      }
+    );
+  }
+
   getAllUsers(): Observable<User[]> {
     return this.httpClient.get<User[]>(this.API + 'user');
   }
 
-  postLoginData(user: User): Observable<any> {
+  getComData(id:number): Observable<Company[]> {
+    return this.httpClient.get<Company[]>(this.API + 'company/' + id);
+  }
+
+  postLoginData(user2: User2): Observable<any> {
     const headers = new HttpHeaders();
     // headers.append('Content-Type', 'aaplicedForms');
     return this.httpClient.post(
       environment.api + 'login',
-         user
+         user2
       ,
       {
         headers
@@ -81,13 +102,13 @@ export class ApiService {
     );
   }
 
-  postTrainer(ufr: Employee): Observable<any> {
+  postTrainer(employee: Employee): Observable<any> {
     const headers = new HttpHeaders();
     // headers.append('Content-Type', 'aaplicedForms');
     return this.httpClient.post(
       environment.api + 'trainer', //??? which table 
 
-      ufr
+      employee
       ,
       {
         headers

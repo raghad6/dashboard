@@ -1,7 +1,7 @@
 import { ApiService } from 'src/app/services/api.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { User } from 'src/app/models/user';
+import { User2 } from 'src/app/models/user2';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   alertEmail = false;
   alertPass = false;
   alertUser = false;
-  Users: User[] = [];
+  Users: User2[] = [];
   Title = 'Log In';
 
 
@@ -52,7 +52,7 @@ export class LoginComponent implements OnInit {
       console.log('this is valid ');
       // post req login
 
-      this.apiService.postLoginData(new User(0, '', this.Password, this.email)).subscribe((s: any) => {
+      this.apiService.postLoginData(new User2(0, '', this.Password, this.email)).subscribe((s: any) => {
         console.log(s);
         this.role = s['Role'];
 

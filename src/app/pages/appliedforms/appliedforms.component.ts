@@ -20,11 +20,11 @@ export class AppliedformsComponent implements OnInit {
 
   async ngOnInit()  {
     this.role = await localStorage.getItem('role');
-  //   if(this.role!=0){
-  //     console.log(' in on initthis.role: ', this.role);
+    if(this.role!=0){
+      console.log(' in on initthis.role: ', this.role);
 
-  //  this.goToPage('login');
-  //   }
+   this.goToPage('login');
+    }
   }
   goToPage(pageName:string){
     this.router.navigate([`${pageName}`]);
